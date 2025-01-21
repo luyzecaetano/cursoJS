@@ -20,6 +20,7 @@ document.addEventListener("click", function (e) {
   const el = e.target;
   if (el.classList.contains("btn-apagar")) {
     el.parentElement.remove();
+    salvaTarefas();
   }
 });
 //
@@ -66,6 +67,7 @@ function criaTarefa(textoInput) {
   tarefas.appendChild(div); // insere a div formada no elemento ul
 
   limpaInput(); // limpa input após inserir tarefa
+  salvaTarefas();
 }
 
 function limpaInput() {
@@ -73,3 +75,26 @@ function limpaInput() {
   inputTarefa.value = "";
   inputTarefa.focus();
 }
+
+function salvaTarefas() {
+  const liTarefas = tarefas.querySelectorAll("li");
+  const listaTarefas = [];
+
+  for (let tarefa of liTarefas) {
+    let tarefaTexto = tarefa.innerText;
+    listaTarefas.push(tarefaTexto);
+  }
+
+  const tarefasJSON = JSON.stringify(listaTarefas);
+  localStorage.setItem("tarefas", tarefasJSON);
+}
+
+function addTarefasSalvas() {
+  const tarefas = localStorage.getItem("tarefas");
+  const listaTarefas = JSON.parse(tarefas);
+
+  for (let tarefa of listaTarefas) {
+    criaTarefa(tarefa);
+  }
+}
+addTarefasSalvas();
