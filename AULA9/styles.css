@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap");
+:root {
+  --primary-color: rgb(17, 86, 102);
+  --primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: "Open sans", sans-serif;
+  font-size: 1.3em;
+  line-height: 1.3em;
+}
+
+.container {
+  max-width: 640px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  margin: 15px 0;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+p {
+  margin: 8px 0;
+}
+
+#form input,
+#form label,
+#form button {
+  display: block;
+  width: 100%;
+  border-radius: 7px;
+}
+
+#form label {
+  margin-top: 15px;
+}
+
+#form input {
+  font-size: 24px;
+  height: 50px;
+  padding: 0 20px;
+  border: 1px solid #9c9c9c;
+}
+#form input:focus {
+  border: none;
+  outline: 1px solid var(--primary-color);
+}
+
+#form button {
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#form button:hover {
+  background: var(--primary-color-darker);
+}
+
+.imc-valido {
+  display: flex;
+  align-items: center;
+  background-color: #61af6e;
+  border-radius: 7px;
+  margin-top: 20px;
+  height: 40px;
+  padding: 0 7px;
+}
+
+.invalido {
+  display: flex;
+  align-items: center;
+  background-color: #f77;
+  border-radius: 7px;
+  margin-top: 20px;
+  height: 40px;
+  padding: 0 7px;
+}
