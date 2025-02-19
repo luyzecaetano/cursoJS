@@ -1,4 +1,4 @@
-import { ChevronRightIcon, X } from "lucide-react";
+import { Check, ChevronRightIcon, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
@@ -19,8 +19,9 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
             <button
               onClick={() => onTaskClick(task.id)}
               className={`w-full p-2 rounded-l-lg text-left font-semibold bg-zinc-800 text-white ${
-                task.isCompleted && "line-through"
+                task.isCompleted && "line-through text-green-200"
               }`}>
+              {task.isCompleted && <Check className="inline mx-2" />}
               {task.title}
             </button>
             <button
